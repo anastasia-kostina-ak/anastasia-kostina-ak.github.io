@@ -1,5 +1,7 @@
 const copy = {
   en: {
+    nameFirst: "Anastasia",
+    nameLast: "Kostina",
     nav: { home: "Selected work", illustrations: "Illustrations", other: "Other work", about: "About" },
     language: "Choose language",
     navigation: "Main navigation",
@@ -35,6 +37,8 @@ const copy = {
     aboutPageTitle: "About — Anastasia Kostina"
   },
   de: {
+    nameFirst: "Anastasia",
+    nameLast: "Kostina",
     nav: { home: "Ausgewählte Arbeiten", illustrations: "Illustrationen", other: "Weitere Arbeiten", about: "Über Anastasia" },
     language: "Sprache wählen",
     navigation: "Hauptnavigation",
@@ -70,6 +74,8 @@ const copy = {
     aboutPageTitle: "Über Anastasia — Anastasia Kostina"
   },
   ru: {
+    nameFirst: "Анастасия",
+    nameLast: "Костина",
     nav: { home: "Избранное", illustrations: "Иллюстрации", other: "Другие работы", about: "Об Анастасии" },
     language: "Выбрать язык",
     navigation: "Основная навигация",
@@ -158,7 +164,7 @@ function header(t) {
   const links = Object.entries(t.nav).map(([key, label]) => `<a href="${paths[key]}" ${page === key ? 'aria-current="page"' : ""}>${label}</a>`).join("");
   const options = languageOptions.map(option => `<button type="button" role="menuitemradio" aria-checked="${language === option.code}" data-lang="${option.code}"><span aria-hidden="true">${option.flag}</span><span>${option.label}</span>${language === option.code ? '<span class="language-check" aria-hidden="true">✓</span>' : ""}</button>`).join("");
   return `<header class="site-header wrap">
-    <a class="wordmark" href="${paths.home}" aria-label="Anastasia Kostina — ${t.nav.home}">ANASTASIA<br>KOSTINA<span class="wordmark__dot">.</span></a>
+    <a class="wordmark" href="${paths.home}" aria-label="Anastasia Kostina — ${t.nav.home}">ANASTASIA<br>KOSTINA</a>
     <nav class="main-nav" aria-label="${t.navigation}">${links}</nav>
     <div class="language-picker">
       <button class="language-toggle" type="button" aria-label="${t.language}" aria-haspopup="menu" aria-expanded="false"><span aria-hidden="true">${current.flag}</span><span>${current.code.toUpperCase()}</span><span class="chevron" aria-hidden="true">⌄</span></button>
@@ -170,7 +176,7 @@ function header(t) {
 function home(t) {
   return `<main id="main" class="wrap home-main">
     <section class="home-intro" aria-labelledby="home-title">
-      <div><span class="eyebrow">${t.role}</span><h1 id="home-title">Anastasia<br><em>Kostina</em></h1></div>
+      <div><span class="eyebrow">${t.role}</span><h1 id="home-title">${t.nameFirst}<br><em>${t.nameLast}</em></h1></div>
       <p>${t.intro}</p>
     </section>
     <section class="selected-section" aria-labelledby="selected-title">
