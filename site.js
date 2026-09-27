@@ -176,7 +176,7 @@ function header(t) {
 function home(t) {
   return `<main id="main" class="wrap home-main">
     <section class="home-intro" aria-labelledby="home-title">
-      <div><span class="eyebrow">${t.role}</span><h1 id="home-title">${t.nameFirst}<br><em>${t.nameLast}</em></h1></div>
+      <div><span class="eyebrow">${t.role}</span><h1 id="home-title">${t.nameFirst}<br><span class="home-intro__surname">${t.nameLast}</span></h1></div>
       <p>${t.intro}</p>
     </section>
     <section class="selected-section" aria-labelledby="selected-title">

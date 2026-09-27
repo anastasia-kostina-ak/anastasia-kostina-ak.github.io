@@ -106,8 +106,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .eyebrow { display: inline-block; color: var(--muted); font-size: .78rem; line-height: 1.4; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
 .home-main { padding-top: clamp(48px, 6.3vw, 104px); }
 .home-intro { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(220px, .5fr); align-items: end; gap: 48px; padding-bottom: clamp(64px, 8vw, 124px); }
-.home-intro h1 { margin: 24px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(4.7rem, 10.5vw, 10.9rem); line-height: .91; letter-spacing: -.075em; }
-.home-intro h1 em { font-weight: 400; }
+.home-intro h1 { margin: 24px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(4.7rem, 10.5vw, 10.9rem); line-height: 1; letter-spacing: -.045em; }
+.home-intro__surname { font-style: normal; font-weight: 400; }
+html[lang="ru"] .home-intro h1 { letter-spacing: -.02em; }
 .home-intro p { max-width: 290px; margin: 0 0 9px; color: var(--muted); font-size: 1rem; line-height: 1.55; }
 .selected-section { padding-bottom: 130px; }
 .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-top: 21px; border-top: 1px solid var(--ink); }
@@ -179,7 +180,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .main-nav a { font-size: .85rem; }
   .home-main { padding-top: 48px; }
   .home-intro { padding-bottom: 74px; }
-  .home-intro h1 { font-size: clamp(4.2rem, 17vw, 6.5rem); }
+  .home-intro h1 { font-size: clamp(3.8rem, 16vw, 6.5rem); letter-spacing: -.035em; }
   .section-note { margin-bottom: 25px; }
   .featured-grid, .other-grid, .about-grid { grid-template-columns: 1fr; }
   .featured-grid { gap: 42px; }
