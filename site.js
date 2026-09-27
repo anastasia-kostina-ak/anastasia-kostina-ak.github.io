@@ -113,9 +113,9 @@ const copy = {
 };
 
 const languageOptions = [
-  { code: "en", flag: "🇬🇧", label: "English" },
-  { code: "de", flag: "🇩🇪", label: "Deutsch" },
-  { code: "ru", flag: "🇷🇺", label: "Русский" }
+  { code: "en", flag: "gb", label: "English" },
+  { code: "de", flag: "de", label: "Deutsch" },
+  { code: "ru", flag: "ru", label: "Русский" }
 ];
 
 const page = document.body.dataset.page || "home";
@@ -162,12 +162,12 @@ function archiveRow(index, title, t) {
 function header(t) {
   const current = languageOptions.find(option => option.code === language);
   const links = Object.entries(t.nav).map(([key, label]) => `<a href="${paths[key]}" ${page === key ? 'aria-current="page"' : ""}>${label}</a>`).join("");
-  const options = languageOptions.map(option => `<button type="button" role="menuitemradio" aria-checked="${language === option.code}" data-lang="${option.code}"><span aria-hidden="true">${option.flag}</span><span>${option.label}</span>${language === option.code ? '<span class="language-check" aria-hidden="true">✓</span>' : ""}</button>`).join("");
+  const options = languageOptions.map(option => `<button type="button" role="menuitemradio" aria-checked="${language === option.code}" data-lang="${option.code}"><img class="flag-icon" src="${prefix}flags/${option.flag}.svg" alt="" aria-hidden="true"><span>${option.label}</span>${language === option.code ? '<span class="language-check" aria-hidden="true">✓</span>' : ""}</button>`).join("");
   return `<header class="site-header wrap">
     <a class="wordmark" href="${paths.home}" aria-label="Anastasia Kostina — ${t.nav.home}">ANASTASIA<br>KOSTINA</a>
     <nav class="main-nav" aria-label="${t.navigation}">${links}</nav>
     <div class="language-picker">
-      <button class="language-toggle" type="button" aria-label="${t.language}" aria-haspopup="menu" aria-expanded="false"><span aria-hidden="true">${current.flag}</span><span>${current.code.toUpperCase()}</span><span class="chevron" aria-hidden="true">⌄</span></button>
+      <button class="language-toggle" type="button" aria-label="${t.language}" aria-haspopup="menu" aria-expanded="false"><img class="flag-icon" src="${prefix}flags/${current.flag}.svg" alt="" aria-hidden="true"><span>${current.code.toUpperCase()}</span><span class="chevron" aria-hidden="true">⌄</span></button>
       <div class="language-menu" role="menu" hidden>${options}</div>
     </div>
   </header>`;
@@ -183,7 +183,7 @@ function home(t) {
       <div class="section-heading"><h2 id="selected-title">${t.selected}</h2><span class="section-index">01—02</span></div>
       <p class="section-note">${t.selectedNote}</p>
       <div class="featured-grid">${projectCard("01", t.book, t)}${projectCard("02", t.cards, t, "project-card--offset")}</div>
-      <a class="text-link" href="${paths.illustrations}">${t.explore}<span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="${paths.illustrations}">${t.explore}</a>
     </section>
   </main>`;
 }

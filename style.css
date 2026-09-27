@@ -89,11 +89,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 .site-header { min-height: 112px; display: flex; align-items: center; gap: 48px; border-bottom: 1px solid var(--ink); }
 .wordmark { flex: 0 0 auto; font-size: .92rem; font-weight: 700; line-height: .98; letter-spacing: -.055em; }
-.wordmark__dot { color: var(--accent); }
 .main-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 30px; margin-left: auto; }
 .main-nav a { padding: 10px 0; font-size: .9rem; line-height: 1.25; color: var(--muted); border-bottom: 1px solid transparent; transition: color .18s ease, border-color .18s ease; }
 .main-nav a:hover, .main-nav a[aria-current="page"] { color: var(--ink); border-color: var(--ink); }
 .language-picker { position: relative; margin-left: 8px; }
+.flag-icon { display: block; flex: 0 0 auto; width: 20px; height: 15px; object-fit: cover; border: 1px solid rgba(29,29,27,.14); }
 .language-toggle { display: inline-flex; gap: 8px; align-items: center; justify-content: center; min-width: 90px; min-height: 42px; padding: 8px 11px; color: var(--ink); background: transparent; border: 1px solid var(--ink); cursor: pointer; font-size: .84rem; font-weight: 700; }
 .language-toggle:hover { background: var(--ink); color: var(--paper); }
 .chevron { margin-left: 3px; font-size: 1.1rem; line-height: .7; transform: translateY(-3px); }
